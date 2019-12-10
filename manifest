@@ -1,0 +1,31 @@
+# Name of the image and version
+name="nexus-0.1.0"
+
+# Build image to use for base of the image.  This image must
+# already exist in the ZFS hierarchy.
+# base-64-x.x.x or minimal-64-x.x.x
+base="base-64-19.3.0"
+
+# Organization name (implanted in motd and product)
+organization="Joyent"
+
+# Brand name (implanted in motd and product)
+brand="Instance"
+
+# Description of the image
+description="nexus 3.19.1"
+
+# Homepage specific to the image
+homepage="https://github.com/nonepassby/mi-nexus"
+
+# Metadata users to be created (not real users created)
+users=""
+
+# Role of image (database, loadbalancer, development, hadoop, other, os)
+role="development"
+
+# Minimum amount of ram needed
+minram=""
+
+# new image uuid
+manifest_uuid="1ff6bd2e-1a25-11ea-9c7b-4f2c609873fb"

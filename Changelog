@@ -1,0 +1,5 @@
+nexus-0.1.0
+* Base image is base-64-19.3.0 (2019Q3)
+* Initial release
+- openjdk8
+- nexus 3.19.1

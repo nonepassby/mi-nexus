@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+#
+# Put customizations to your image in this file.
+
+PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
+
+# Exit if any commands fail
+set -o errexit
+
+
+# Configuring image specific packages
+echo "* Configuring image specific packages.";
+#wget http://download.sonatype.com/nexus/3/nexus-3.19.1-01-unix.tar.gz -O /root/nexus-3.19.1-01-unix.tar.gz
+tar xvzf /root/nexus-3.19.1-01-unix.tar.gz -C /opt
+
+# data_dir
+datadir=/data/nexus3
+# link nexus
+ln -s /opt/nexus-3.19.1-01 /opt/nexus
+# replace data_dir
+gsed -i "s|\.\./sonatype-work/nexus3|${datadir}|" /opt/nexus/bin/nexus.vmoptions
+
+/usr/sbin/groupadd -g 5098 nexus
+/usr/sbin/useradd -u 5098 -g nexus -d /opt/nexus -s /usr/bin/bash nexus
+
+svccfg import /root/nexus.xml
+
+# Clean up
+echo "* Cleaning up."
+rm -rf /root/*
+
+# Prepare image for provisioning
+sm-prepare-image -y
