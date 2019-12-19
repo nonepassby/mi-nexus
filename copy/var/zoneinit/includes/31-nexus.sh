@@ -1,13 +1,16 @@
 
+log "set mem size"
+if mdata-get mem_xms 1>/dev/null 2>&1; then
+    MEMXMS=`mdata-get mem_xms`
+    gsed -i "s|2703m|${MEMXMS}|g" /opt/nexus/bin/nexus.vmoptions
+fi
+
+
 log "creating /data directory"
 
 if [[ ! -e /data/nexus3 ]]; then
   if [[ ! -e /data ]]; then
     mkdir /data
-  fi
-  if mdata-get mem_xms 1>/dev/null 2>&1; then
-    MEMXMS=`mdata-get mem_xms`
-    gsed -i "s|2703m|${MEMXMS}|g" /opt/nexus/bin/nexus.vmoptions   
   fi
   if [[ -e /opt/sonatype-work ]]; then
     mv /opt/sonatype-work/nexus3 /data
