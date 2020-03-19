@@ -22,8 +22,8 @@ ln -s /opt/nexus-${nexus_ver} /opt/nexus
 # replace data_dir
 gsed -i "s|\.\./sonatype-work/nexus3|${datadir}|" /opt/nexus/bin/nexus.vmoptions
 
-/usr/sbin/groupadd -g 5098 nexus
-/usr/sbin/useradd -u 5098 -g nexus -d /opt/nexus -s /usr/bin/bash nexus
+/usr/sbin/groupadd -g 200 nexus
+/usr/sbin/useradd -u 200 -g nexus -d /opt/nexus -s /usr/bin/bash nexus
 
 svccfg import /root/nexus.xml
 

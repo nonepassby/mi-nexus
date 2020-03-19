@@ -1,6 +1,7 @@
 nexus-3.21.1
 * Base image is base-64-lts-19.4.0 (2019Q4)
 - nexus 3.21.1
+- nexus user & group id change to 200
 
 nexus-0.1.0
 * Base image is base-64-19.3.0 (2019Q3)
