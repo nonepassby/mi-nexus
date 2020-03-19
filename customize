@@ -7,16 +7,18 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
+nexus_ver=3.21.1-01
 
 # Configuring image specific packages
 echo "* Configuring image specific packages.";
-#wget http://download.sonatype.com/nexus/3/nexus-3.19.1-01-unix.tar.gz -O /root/nexus-3.19.1-01-unix.tar.gz
-tar xvzf /root/nexus-3.19.1-01-unix.tar.gz -C /opt
+#wget http://download.sonatype.com/nexus/3/nexus-${nexus_ver}-unix.tar.gz -O /root/nexus-${nexus_ver}-unix.tar.gz
+wget http://mirrors.itime.biz/nexus/nexus-${nexus_ver}-unix.tar.gz -O /root/nexus-${nexus_ver}-unix.tar.gz
+tar xzf /root/nexus-${nexus_ver}-unix.tar.gz -C /opt
 
 # data_dir
-datadir=/data/nexus3
+datadir=/nexus-data
 # link nexus
-ln -s /opt/nexus-3.19.1-01 /opt/nexus
+ln -s /opt/nexus-${nexus_ver} /opt/nexus
 # replace data_dir
 gsed -i "s|\.\./sonatype-work/nexus3|${datadir}|" /opt/nexus/bin/nexus.vmoptions
 

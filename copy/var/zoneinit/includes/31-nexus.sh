@@ -8,22 +8,19 @@ fi
 
 log "creating /data directory"
 
-if [[ ! -e /data/nexus3 ]]; then
-  if [[ ! -e /data ]]; then
-    mkdir /data
-  fi
+if [[ ! -e /nexus-data ]]; then
   if [[ -e /opt/sonatype-work ]]; then
-    mv /opt/sonatype-work/nexus3 /data
+    mv /opt/sonatype-work/nexus3 /nexus-data
   else
-    mkdir /data/nexus3
+    mkdir /nexus-data
   fi
 fi
-if [[ -e /opt/sonatype-work ]]; then
-  rm -r /opt/sonatype-work
-fi
+#if [[ -e /opt/sonatype-work ]]; then
+#  rm -r /opt/sonatype-work
+#fi
 
-log "force correct ownership of /data directory"
-chown -R nexus:nexus /data
+log "force correct ownership of /nexus-data directory"
+chown -R nexus:nexus /nexus-data
 
 log "starting nexus"
 /usr/sbin/svcadm enable nexus

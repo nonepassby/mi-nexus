@@ -1,10 +1,10 @@
 # Name of the image and version
-name="nexus-0.1.0"
+name="nexus-3.21.1"
 
 # Build image to use for base of the image.  This image must
 # already exist in the ZFS hierarchy.
 # base-64-x.x.x or minimal-64-x.x.x
-base="base-64-19.3.0"
+base="base-64-lts-19.4.0"
 
 # Organization name (implanted in motd and product)
 organization="Joyent"
@@ -13,7 +13,7 @@ organization="Joyent"
 brand="Instance"
 
 # Description of the image
-description="nexus 3.19.1"
+description="base-64-lts 19.4.0 with nexus 3.21.1 installed"
 
 # Homepage specific to the image
 homepage="https://github.com/nonepassby/mi-nexus"
@@ -28,4 +28,4 @@ role="development"
 minram=""
 
 # new image uuid
-manifest_uuid="1ff6bd2e-1a25-11ea-9c7b-4f2c609873fb"
+manifest_uuid="cc9b5e80-640e-11ea-932e-5bce6bfb22d1"
