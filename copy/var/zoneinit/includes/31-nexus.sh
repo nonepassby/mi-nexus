@@ -6,7 +6,7 @@ if mdata-get mem_xms 1>/dev/null 2>&1; then
 fi
 
 
-log "creating /data directory"
+log "creating /nexus-data directory"
 
 if [[ ! -e /nexus-data ]]; then
   if [[ -e /opt/sonatype-work ]]; then
@@ -15,9 +15,6 @@ if [[ ! -e /nexus-data ]]; then
     mkdir /nexus-data
   fi
 fi
-#if [[ -e /opt/sonatype-work ]]; then
-#  rm -r /opt/sonatype-work
-#fi
 
 log "force correct ownership of /nexus-data directory"
 chown -R nexus:nexus /nexus-data

@@ -1,3 +1,10 @@
+nexus-minimal-3.21.1
+* Base image is minimal-64-lts-19.4.0 (2019Q4)
+* change name to nexus-minimal
+* add pkgsrc,pkgsrc_base metadata
+* add manifest.json
+* add vm.json
+
 nexus-3.21.1
 * Base image is base-64-lts-19.4.0 (2019Q4)
 - nexus 3.21.1

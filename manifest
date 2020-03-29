@@ -1,13 +1,13 @@
 # Name of the image and version
-name="nexus-3.21.1"
+name="nexus-minimal-3.21.1"
 
 # Build image to use for base of the image.  This image must
 # already exist in the ZFS hierarchy.
 # base-64-x.x.x or minimal-64-x.x.x
-base="base-64-lts-19.4.0"
+base="minimal-64-lts-19.4.0"
 
 # Organization name (implanted in motd and product)
-organization="Joyent"
+organization="Itime"
 
 # Brand name (implanted in motd and product)
 brand="Instance"
@@ -28,4 +28,4 @@ role="development"
 minram=""
 
 # new image uuid
-manifest_uuid="cc9b5e80-640e-11ea-932e-5bce6bfb22d1"
+manifest_uuid="b0218a14-71e1-11ea-9fd8-438f37a54419"

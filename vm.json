@@ -1,0 +1,31 @@
+{
+  "brand": "joyent",
+  "image_uuid": "b0218a14-71e1-11ea-9fd8-438f37a54419",
+  "autoboot": true,
+  "alias": "nexus",
+  "hostname": "nexus",
+  "dns_domain": "nexus",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "max_physical_memory": 2048,
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "ips": ["dhcp"],
+      "gateway": "192.168.1.1",
+      "primary": true
+    }
+  ],
+  "filesystems": [
+    {
+      "type": "lofs",
+      "source": "/zones/lofs/nexus/nexus-data",
+      "target": "/nexus-data"
+    }
+  ],
+  "customer_metadata": {
+    "mem_xms": "1024m"
+  }
+}
